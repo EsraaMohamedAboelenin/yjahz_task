@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="item"
+            type="com.example.yjahz.data.model.Popular.Data.Item" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_140sdp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:padding="@dimen/_3sdp"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        app:strokeColor="@color/white"
+        app:strokeWidth=".5dp"
+        app:cardElevation="@dimen/_3sdp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ramen"
+                android:scaleType="centerCrop"
+                android:id="@+id/image"
+                bind:loadImageFromUrl="@{item.image}"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_3sdp"
+             app:layout_constraintTop_toTopOf="@id/image"
+                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/ic_add_to_fav"
+                android:id="@+id/fav_icon"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#66000000"
+
+                android:padding="@dimen/_3sdp"
+                app:layout_constraintBottom_toBottomOf="parent">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{item.name}"
+
+                     android:textDirection="ltr"
+                    android:id="@+id/product_name"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_secondary_color"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{item.distance}"
+                    android:drawableStart="@drawable/ic_location"
+                    android:paddingVertical="@dimen/_2sdp"
+                    android:textSize="@dimen/_10ssp"
+                    android:id="@+id/distance"
+                    android:textColor="@color/text_secondary_color"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="@dimen/_3sdp"
+    android:orientation="horizontal">
+                <androidx.appcompat.widget.AppCompatRatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:numStars="3"
+                    android:id="@+id/rating"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:isIndicator="false"
+                    android:rating="0"
+
+                    />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@{item.rate}"
+        android:paddingHorizontal="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_2sdp"
+        android:textColor="@color/text_secondary_color"
+        android:id="@+id/rating_value"/>
+</LinearLayout>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

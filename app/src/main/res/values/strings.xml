@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">yjahz</string>
+    <string name="user_name">Name</string>
+    <string name="email">Email</string>
+    <string name="phoneNumber">Phone Number</string>
+    <string name="passsword">Password</string>
+   <string name="comfirm_password">Confirm Password</string>
+    <string name="sign_up">Sign up</string>
+    <string name="login">Login</string>
+    <string name="home">Home</string>
+    <string name="view_all"><u>View all</u></string>
+
+</resources>

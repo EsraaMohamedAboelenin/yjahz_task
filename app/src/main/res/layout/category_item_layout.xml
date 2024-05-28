@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+<variable
+    name="category"
+    type="com.example.yjahz.data.model.Categories.Data.Category" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="@dimen/_95sdp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:padding="@dimen/_3sdp"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        app:strokeColor="@color/white"
+        app:strokeWidth=".5dp"
+        app:cardElevation="@dimen/_3sdp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_height="@dimen/_80sdp"
+                android:src="@drawable/ramen"
+                android:id="@+id/category_image"
+                bind:loadImageFromUrl="@{category.categoryImage}"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               android:text="@{category.categoryName}"
+                android:id="@+id/category_name"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:textColor="@color/text_title"
+                app:layout_constraintTop_toBottomOf="@id/category_image"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="categoryAdapter"
+            type="com.example.yjahz.ui.home.adapter.CategoryAdapter" />
+        <variable
+            name="popularAdapter"
+            type="com.example.yjahz.ui.home.adapter.PopularAdapter" />
+        <variable
+            name="trendingAdapter"
+            type="com.example.yjahz.ui.home.adapter.TrendingProductAdapter" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/user_name"
+    android:textColor="@color/text_title"
+    android:textSize="@dimen/_12ssp"
+    android:textStyle="bold"
+    android:text="hello ahmed"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/user_address"
+                android:paddingVertical="@dimen/_8sdp"
+                android:textColor="@color/text_title"
+                android:textSize="@dimen/_12ssp"
+                android:drawableEnd="@drawable/ic_right_arrow"
+                android:text="Riyadh ( 15 -Jasmine neighbo..."/>
+
+
+<include
+    layout="@layout/search_layout"
+    android:id="@+id/search_layout"/>
+            
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:paddingVertical="@dimen/_10sdp">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Categories"
+                   android:layout_weight="1"
+                   android:textColor="@color/text_title"
+                   android:textSize="@dimen/_10ssp"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/view_all"
+                   android:textColor="@color/text_secondary_color"
+                   android:textSize="@dimen/_10ssp"/>
+           </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/categories"
+                android:paddingVertical="@dimen/_3sdp"
+                android:adapter="@{categoryAdapter}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Popular now"
+                    android:layout_weight="1"
+                    android:textColor="@color/text_title"
+                    android:textSize="@dimen/_10ssp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/view_all"
+                    android:textColor="@color/text_secondary_color"
+                    android:textSize="@dimen/_10ssp"/>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/popular_list"
+                android:paddingVertical="@dimen/_3sdp"
+                android:adapter="@{popularAdapter}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trending now"
+                    android:layout_weight="1"
+                    android:textColor="@color/text_title"
+                    android:textSize="@dimen/_10ssp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/view_all"
+                    android:textColor="@color/text_secondary_color"
+                    android:textSize="@dimen/_10ssp"/>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/treanding_list"
+                android:paddingVertical="@dimen/_3sdp"
+                android:adapter="@{trendingAdapter}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>
