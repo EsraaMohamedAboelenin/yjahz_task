@@ -25,6 +25,9 @@ class PopularAdapter  (private val popularList:ArrayList<Popular.Data.Item>): Re
         if(popularList[position].isFavorite)
             holder.binding.favIcon.setImageResource(R.drawable.fav)
         else holder.binding.favIcon.setImageResource(R.drawable.ic_add_to_fav)
+        if(popularList[position].rate == "0")
+            holder.binding.ratingValue.visibility = View.GONE
+        else holder.binding.ratingValue.visibility = View.VISIBLE
 
     }
 
